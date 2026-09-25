@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe Técnico - Taller 1 Flutter</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b; background: #f8fafc; line-height: 1.5; margin: 0; padding: 20px; }
+  .card { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 900px; margin: 0 auto; }
+  h1 { color: #4f46e5; border-bottom: 3px solid #6366f1; padding-bottom: 8px; font-size: 24px; margin-top: 0; }
+  h2 { color: #0ea5e9; margin-top: 25px; font-size: 18px; border-left: 4px solid #0ea5e9; padding-left: 10px; page-break-after: avoid; }
+  .portada { background: linear-gradient(135deg, #4f46e5, #0ea5e9); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; }
+  .portada h1 { color: white; border: none; font-size: 24px; margin-bottom: 12px; }
+  .portada p { margin: 4px 0; font-size: 14px; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #4f46e5; font-family: monospace; font-size: 13px; }
+  pre { background: #0f172a; color: #f8fafc; padding: 14px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 12px; }
+  .badge { display: inline-block; background: #10b981; color: white; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+  .img-box { margin: 15px 0; text-align: center; background: #f8fafc; padding: 10px; border-radius: 10px; border: 1px solid #e2e8f0; page-break-inside: avoid; }
+  .img-box img { max-width: 100%; height: auto; max-height: 380px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+  .img-caption { font-size: 12px; color: #64748b; margin-top: 6px; font-style: italic; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- PORTADA OBLIGATORIA -->
+  <div class="portada">
+    <h1>INFORME TÉCNICO - TALLER 1</h1>
+    <p><strong>Asignatura:</strong> Desarrollo de Aplicaciones Móviles</p>
+    <p><strong>Estudiante:</strong> Santiago</p>
+    <p><strong>Código de Estudiante:</strong> [Tu Código de Estudiante]</p>
+    <p><strong>Tema:</strong> Construcción de Pantalla Básica con StatefulWidget, setState() y Control de Versiones Git</p>
+    <p><strong>Repositorio GitHub:</strong> <a href="https://github.com/Santi202305/Flutter.git" style="color:white;">https://github.com/Santi202305/Flutter.git</a></p>
+    <p><strong>Rama del Taller:</strong> <span class="badge">feature/taller1</span></p>
+  </div>
+
+  <!-- OBJETIVO -->
+  <h2>1. Objetivo del Taller</h2>
+  <p>Construir una pantalla básica en Flutter implementando la arquitectura de un <code>StatefulWidget</code> para evidenciar el manejo de estado reactivo mediante <code>setState()</code>. Asimismo, aplicar las buenas prácticas de control de versiones Git utilizando un repositorio único con las ramas <code>main</code>, <code>dev</code> y <code>feature/taller1</code>, integrando los cambios mediante Pull Requests.</p>
+
+  <!-- EXPLICACIÓN TÉCNICA -->
+  <h2>2. Explicación Técnica: StatefulWidget y setState()</h2>
+  <p>En Flutter, un <code>StatefulWidget</code> es un widget cuyos datos son mutables en tiempo de ejecución. La arquitectura se divide en dos clases principales:</p>
+  <ul>
+    <li><strong>StatefulWidget:</strong> Define la configuración inmutable del widget.</li>
+    <li><strong>State:</strong> Contiene las variables de estado y la lógica de renderización dentro del método <code>build()</code>.</li>
+  </ul>
+  <p>El método <code>setState()</code> le indica al framework que el estado interno ha sido modificado. Esto marca el widget como "dirty" (sucio), obligando a Flutter a ejecutar de nuevo el método <code>build()</code> para actualizar únicamente los elementos visuales modificados de forma reactiva y eficiente.</p>
+
+  <!-- EVIDENCIAS DE LA APLICACIÓN -->
+  <h2>3. Evidencias Visuales de la Aplicación Flutter</h2>
+  
+  <div class="img-box">
+    <img src="docs/screenshots/app_inicial.png" alt="Estado Inicial de la App">
+    <div class="img-caption">Figura 1. Estado inicial de la app con el título "Hola, Flutter", tarjeta de estudiante, Row con imágenes (Asset/Network), Stack y GridView.</div>
+  </div>
+
+  <div class="img-box">
+    <img src="docs/screenshots/app_cambiado.png" alt="Estado Cambiado con SnackBar">
+    <div class="img-caption">Figura 2. Estado tras presionar el botón: Título cambiado a "¡Título cambiado!" en la AppBar y SnackBar flotante con el mensaje "Título actualizado".</div>
+  </div>
+
+  <!-- WIDGETS ADICIONALES -->
+  <h2>4. Widgets Adicionales Implementados</h2>
+  <ul>
+    <li><strong>Container:</strong> Utilizado con bordes personalizados, sombras y gradiente moderno en las tarjetas.</li>
+    <li><strong>Stack:</strong> Implementado en la galería de imágenes para superponer etiquetas flotantes ("Image.network" y "Image.asset").</li>
+    <li><strong>GridView:</strong> Rejilla interactiva de 4 celdas mostrando los conceptos principales del taller.</li>
+    <li><strong>ListView:</strong> Lista estructurada con iconos, avatares, títulos y subtítulos.</li>
+  </ul>
+
+  <!-- FLUJO DE GIT -->
+  <h2>5. Evidencia del Flujo de Trabajo en Git (GitFlow & Pull Requests)</h2>
+  <p>Se realizó la gestión de ramas respetando el flujo exigido:</p>
+  <pre>
+1. Creación de rama feature/taller1 desde dev.
+2. Commits atómicos e incrementales:
+   - chore: flutter generate boilerplate
+   - feat: add assets and update pubspec
+   - feat: implement main screen with state and additional widgets
+   - docs: add README with instructions
+   - style: enhance UI design, fix asset loading, add GridView and Stack widgets
+3. Push de ramas main, dev y feature/taller1 hacia GitHub.
+4. Creación y aprobación de Pull Request (feature/taller1 ➔ dev).
+5. Creación y aprobación de Pull Request (dev ➔ main).
+  </pre>
+
+  <div class="img-box">
+    <img src="docs/screenshots/pr_feature_dev_merged.png" alt="PR feature/taller1 a dev">
+    <div class="img-caption">Figura 3. Evidencia del Pull Request integrado desde feature/taller1 hacia la rama dev en GitHub.</div>
+  </div>
+
+  <div class="img-box">
+    <img src="docs/screenshots/pr_dev_main_merged.png" alt="PR dev a main">
+    <div class="img-caption">Figura 4. Evidencia de la integración final del Pull Request de la rama dev hacia la rama estable main en GitHub.</div>
+  </div>
+
+  <h2>6. Conclusión</h2>
+  <p>Se cumplió con la totalidad de los requerimientos técnicos de Flutter y de control de versiones Git, logrando una aplicación móvil reactiva, limpia y profesional.</p>
+</div>
+</body>
+</html>
