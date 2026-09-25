@@ -27,22 +27,26 @@ En Flutter, las pantallas interactivas utilizan la clase `StatefulWidget` para g
 ### 1. Estado Inicial de la Aplicación
 Muestra el título de la AppBar como *"Hola, Flutter"*, el encabezado del estudiante, la galería en `Row` y los widgets adicionales.
 
-![Estado Inicial](docs/screenshots/app_inicial.png)
+<img src="docs/screenshots/app_inicial.png" alt="Estado Inicial" width="100%" />
+
+---
 
 ### 2. Estado Actualizado (`setState()` + SnackBar)
-Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente a *"¡Título cambiado!"* y se despliega un `SnackBar` flotante indicando *"Título actualizado"*.
+Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente y se despliega un `SnackBar` flotante indicando *"Título actualizado"*.
 
-![Estado Actualizado](docs/screenshots/app_cambiado.png)
+<img src="docs/screenshots/app_cambiado.png" alt="Estado Actualizado" width="100%" />
 
 ---
 
 ## 🔀 Evidencia del Flujo de Git (Pull Requests)
 
 ### Integración de `feature/taller1` hacia `dev`
-![PR feature a dev](docs/screenshots/pr_feature_dev_merged.png)
+<img src="docs/screenshots/pr_feature_dev_merged.png" alt="PR feature a dev" width="100%" />
+
+---
 
 ### Integración de `dev` hacia `main`
-![PR dev a main](docs/screenshots/pr_dev_main_merged.png)
+<img src="docs/screenshots/pr_dev_main_merged.png" alt="PR dev a main" width="100%" />
 
 ---
 

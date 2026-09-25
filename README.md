@@ -61,19 +61,29 @@ class _HomePageState extends State<HomePage> {
 
 ## 📸 Evidencias Gráficas del Taller 1
 
-### 1. Capturas de la Aplicación en Ejecución
+### 1. Estado Inicial de la Aplicación
+Muestra el título de la AppBar como *"Hola, Flutter"*, la tarjeta del estudiante "Santiago", la galería de imágenes (`Row` + `Stack`) y el `GridView`.
 
-| Estado Inicial (`Hola, Flutter`) | Estado Actualizado (`setState()` + SnackBar) |
-| :---: | :---: |
-| ![Estado Inicial](docs/screenshots/app_inicial.png) | ![Estado Actualizado](docs/screenshots/app_cambiado.png) |
+<img src="docs/screenshots/app_inicial.png" alt="Estado Inicial" width="100%" />
 
 ---
 
-### 2. Evidencia del Flujo de Git (Pull Requests)
+### 2. Estado Actualizado (`setState()` + SnackBar)
+Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente y se despliega un `SnackBar` flotante de color verde con el mensaje *"Título actualizado"*.
 
-| PR 1: `feature/taller1` ➔ `dev` | PR 2: `dev` ➔ `main` |
-| :---: | :---: |
-| ![PR Taller1 a Dev](docs/screenshots/pr_feature_dev_merged.png) | ![PR Dev a Main](docs/screenshots/pr_dev_main_merged.png) |
+<img src="docs/screenshots/app_cambiado.png" alt="Estado Actualizado" width="100%" />
+
+---
+
+### 3. Evidencia de Pull Requests (GitFlow)
+
+#### PR 1: Integración de `feature/taller1` ➔ `dev`
+<img src="docs/screenshots/pr_feature_dev_merged.png" alt="PR feature/taller1 a dev" width="100%" />
+
+---
+
+#### PR 2: Integración de `dev` ➔ `main`
+<img src="docs/screenshots/pr_dev_main_merged.png" alt="PR dev a main" width="100%" />
 
 ---
 
