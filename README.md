@@ -35,55 +35,35 @@ Construcción de una interfaz moderna y reactiva en Flutter para demostrar el ma
 - **StatefulWidget:** En Flutter, un widget que requiere actualizar su interfaz de usuario en tiempo de ejecución debe extender de `StatefulWidget`. Se compone de dos clases: la configuración inmutable y la clase `State` que mantiene los datos mutables y la lógica visual en su método `build()`.
 - **setState():** Es la función clave del framework que le notifica a Flutter que el estado interno del objeto ha cambiado. Al invocar `setState(() { ... })`, Flutter marca el widget como "dirty" (sucio) y vuelve a ejecutar el método `build()` de forma eficiente para reflejar los cambios en pantalla sin reiniciar toda la aplicación.
 
-#### Extracto del Código Principal:
-```dart
-class _HomePageState extends State<HomePage> {
-  String _appBarTitle = 'Hola, Flutter';
-
-  void _toggleTitle() {
-    setState(() {
-      _appBarTitle = (_appBarTitle == 'Hola, Flutter') 
-          ? '¡Título cambiado!' 
-          : 'Hola, Flutter';
-    });
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Título actualizado'),
-        backgroundColor: Color(0xFF10B981),
-      ),
-    );
-  }
-}
-```
-
 ---
 
-## 📸 Evidencias Gráficas del Taller 1
+## 📸 Evidencias Gráficas del Taller 1 (En Orden de Ejecución)
 
 ### 1. Estado Inicial de la Aplicación
-Muestra el título de la AppBar como *"Hola, Flutter"*, la tarjeta del estudiante "Santiago", la galería de imágenes (`Row` + `Stack`) y el `GridView`.
+Muestra el título de la AppBar como *"Hola, Flutter"*, el encabezado del estudiante "Santiago", la galería de imágenes (`Row` + `Stack`) y el `GridView`.
 
-<img src="docs/screenshots/app_inicial.png" alt="Estado Inicial" width="100%" />
+<img src="docs/screenshots/01_app_inicial.png" alt="1. Estado Inicial de la App" width="100%" />
 
 ---
 
 ### 2. Estado Actualizado (`setState()` + SnackBar)
-Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente y se despliega un `SnackBar` flotante de color verde con el mensaje *"Título actualizado"*.
+Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente a *"¡Título cambiado!"* y se despliega un `SnackBar` flotante de color verde con el mensaje *"Título actualizado"*.
 
-<img src="docs/screenshots/app_cambiado.png" alt="Estado Actualizado" width="100%" />
-
----
-
-### 3. Evidencia de Pull Requests (GitFlow)
-
-#### PR 1: Integración de `feature/taller1` ➔ `dev`
-<img src="docs/screenshots/pr_feature_dev_merged.png" alt="PR feature/taller1 a dev" width="100%" />
+<img src="docs/screenshots/02_app_cambiado.png" alt="2. Estado Actualizado de la App" width="100%" />
 
 ---
 
-#### PR 2: Integración de `dev` ➔ `main`
-<img src="docs/screenshots/pr_dev_main_merged.png" alt="PR dev a main" width="100%" />
+### 3. Evidencia de Pull Request 1: `feature/taller1` ➔ `dev`
+Pull Request creado y fusionado (*Merged*) exitosamente incorporando las características del Taller 1 a la rama de desarrollo `dev`.
+
+<img src="docs/screenshots/03_pr_feature_dev.png" alt="3. PR feature/taller1 a dev" width="100%" />
+
+---
+
+### 4. Evidencia de Pull Request 2: `dev` ➔ `main`
+Pull Request creado y fusionado (*Merged*) exitosamente integrando los cambios probados de `dev` a la rama de producción `main`.
+
+<img src="docs/screenshots/04_pr_dev_main.png" alt="4. PR dev a main" width="100%" />
 
 ---
 

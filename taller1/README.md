@@ -22,31 +22,29 @@ En Flutter, las pantallas interactivas utilizan la clase `StatefulWidget` para g
 
 ---
 
-## 📸 Evidencias Gráficas de la Aplicación
+## 📸 Evidencias Gráficas del Taller 1 (En Orden)
 
 ### 1. Estado Inicial de la Aplicación
 Muestra el título de la AppBar como *"Hola, Flutter"*, el encabezado del estudiante, la galería en `Row` y los widgets adicionales.
 
-<img src="docs/screenshots/app_inicial.png" alt="Estado Inicial" width="100%" />
+<img src="docs/screenshots/01_app_inicial.png" alt="1. Estado Inicial" width="100%" />
 
 ---
 
 ### 2. Estado Actualizado (`setState()` + SnackBar)
-Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente y se despliega un `SnackBar` flotante indicando *"Título actualizado"*.
+Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el título dinámicamente a *"¡Título cambiado!"* y se despliega un `SnackBar` flotante indicando *"Título actualizado"*.
 
-<img src="docs/screenshots/app_cambiado.png" alt="Estado Actualizado" width="100%" />
-
----
-
-## 🔀 Evidencia del Flujo de Git (Pull Requests)
-
-### Integración de `feature/taller1` hacia `dev`
-<img src="docs/screenshots/pr_feature_dev_merged.png" alt="PR feature a dev" width="100%" />
+<img src="docs/screenshots/02_app_cambiado.png" alt="2. Estado Actualizado" width="100%" />
 
 ---
 
-### Integración de `dev` hacia `main`
-<img src="docs/screenshots/pr_dev_main_merged.png" alt="PR dev a main" width="100%" />
+### 3. Pull Request 1 (`feature/taller1` ➔ `dev`)
+<img src="docs/screenshots/03_pr_feature_dev.png" alt="3. PR feature a dev" width="100%" />
+
+---
+
+### 4. Pull Request 2 (`dev` ➔ `main`)
+<img src="docs/screenshots/04_pr_dev_main.png" alt="4. PR dev a main" width="100%" />
 
 ---
 
