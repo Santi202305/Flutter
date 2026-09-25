@@ -13,7 +13,16 @@ Construir una pantalla básica interactiva en Flutter utilizando `StatefulWidget
 
 ---
 
-## 📸 Evidencias Gráficas
+## 💡 Explicación de StatefulWidget y setState()
+
+En Flutter, las pantallas interactivas utilizan la clase `StatefulWidget` para gestionar datos que cambian con el tiempo:
+1. **StatefulWidget:** Declara el widget reactivo.
+2. **State:** Almacena las variables mutables y define el método `build()` que renderiza la pantalla.
+3. **setState():** Notifica al motor de Flutter que los datos han cambiado, provocando que se vuelva a llamar a `build()` de forma optimizada para actualizar la interfaz.
+
+---
+
+## 📸 Evidencias Gráficas de la Aplicación
 
 ### 1. Estado Inicial de la Aplicación
 Muestra el título de la AppBar como *"Hola, Flutter"*, el encabezado del estudiante, la galería en `Row` y los widgets adicionales.
@@ -37,17 +46,21 @@ Tras presionar el botón *"Cambiar Título de la AppBar"*, se actualiza el títu
 
 ---
 
-## ⚙️ Pasos para Ejecutar
+## 💻 Instrucciones de Ejecución Multi-plataforma
 
-1. Navega a la carpeta del taller:
-   ```bash
-   cd taller1
-   ```
-2. Obtén las dependencias necesarias:
-   ```bash
-   flutter pub get
-   ```
-3. Ejecuta la aplicación:
-   ```bash
-   flutter run -d linux
-   ```
+Puedes ejecutar y probar este proyecto en cualquier plataforma:
+
+```bash
+# 1. Entrar a la carpeta del proyecto
+cd taller1
+
+# 2. Instalar paquetes
+flutter pub get
+
+# 3. Ejecutar según tu sistema:
+flutter run -d windows    # Para Windows
+flutter run -d linux      # Para Linux
+flutter run -d macos      # Para macOS
+flutter run -d chrome     # Para Navegador Web
+flutter run               # Para Android / iOS
+```

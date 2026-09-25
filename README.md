@@ -7,7 +7,7 @@ Bienvenido al repositorio oficial del curso de **Desarrollo de Aplicaciones Móv
 ## 👨‍💻 Datos del Estudiante
 - **Nombre Completo:** Santiago
 - **Asignatura:** Desarrollo de Aplicaciones Móviles
-- **Repositorio:** [https://github.com/Santi202305/Flutter.git](https://github.com/Santi202305/Flutter.git)
+- **Repositorio Público:** [https://github.com/Santi202305/Flutter.git](https://github.com/Santi202305/Flutter.git)
 
 ---
 
@@ -25,19 +25,51 @@ El control de versiones se administra mediante las siguientes ramas estables y d
 
 ---
 
-## 🛠️ Talleres Desarrollados
+## 🛠️ Taller 1: StatefulWidget, setState() y Control de Versiones Git
 
-### 📌 Taller 1: StatefulWidget, setState() y Control de Versiones Git
-
+### 📌 Descripción del Taller
 Construcción de una interfaz moderna y reactiva en Flutter para demostrar el manejo de estado mutable con `setState()`, notificaciones con `SnackBar`, consumo de imágenes `Asset`/`Network`, y widgets avanzados (`Container`, `Stack`, `GridView`, `ListView`).
 
-#### 📸 Evidencias Gráficas del Taller 1
+### 💡 Explicación Técnica: StatefulWidget y setState()
+
+- **StatefulWidget:** En Flutter, un widget que requiere actualizar su interfaz de usuario en tiempo de ejecución debe extender de `StatefulWidget`. Se compone de dos clases: la configuración inmutable y la clase `State` que mantiene los datos mutables y la lógica visual en su método `build()`.
+- **setState():** Es la función clave del framework que le notifica a Flutter que el estado interno del objeto ha cambiado. Al invocar `setState(() { ... })`, Flutter marca el widget como "dirty" (sucio) y vuelve a ejecutar el método `build()` de forma eficiente para reflejar los cambios en pantalla sin reiniciar toda la aplicación.
+
+#### Extracto del Código Principal:
+```dart
+class _HomePageState extends State<HomePage> {
+  String _appBarTitle = 'Hola, Flutter';
+
+  void _toggleTitle() {
+    setState(() {
+      _appBarTitle = (_appBarTitle == 'Hola, Flutter') 
+          ? '¡Título cambiado!' 
+          : 'Hola, Flutter';
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Título actualizado'),
+        backgroundColor: Color(0xFF10B981),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## 📸 Evidencias Gráficas del Taller 1
+
+### 1. Capturas de la Aplicación en Ejecución
 
 | Estado Inicial (`Hola, Flutter`) | Estado Actualizado (`setState()` + SnackBar) |
 | :---: | :---: |
 | ![Estado Inicial](docs/screenshots/app_inicial.png) | ![Estado Actualizado](docs/screenshots/app_cambiado.png) |
 
-#### 🔀 Evidencia de Pull Requests (GitFlow)
+---
+
+### 2. Evidencia del Flujo de Git (Pull Requests)
 
 | PR 1: `feature/taller1` ➔ `dev` | PR 2: `dev` ➔ `main` |
 | :---: | :---: |
@@ -45,18 +77,44 @@ Construcción de una interfaz moderna y reactiva en Flutter para demostrar el ma
 
 ---
 
-## ⚙️ Pasos para Ejecutar el Proyecto
+## 💻 Pasos para Ejecutar el Proyecto (Multi-plataforma)
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/Santi202305/Flutter.git
-   cd Flutter/taller1
-   ```
-2. Instalar las dependencias de Flutter:
-   ```bash
-   flutter pub get
-   ```
-3. Ejecutar la aplicación en entorno Linux o emulador:
-   ```bash
-   flutter run -d linux
-   ```
+Cualquier persona puede clonar y probar este proyecto en **Windows, Linux, macOS, Navegador Web o Emulador Android/iOS**:
+
+### 1. Clonar el Repositorio
+```bash
+git clone https://github.com/Santi202305/Flutter.git
+cd Flutter/taller1
+```
+
+### 2. Obtener Dependencias
+```bash
+flutter pub get
+```
+
+### 3. Ejecutar según tu sistema operativo o plataforma:
+
+- **En Windows:**
+  ```bash
+  flutter run -d windows
+  ```
+
+- **En Linux:**
+  ```bash
+  flutter run -d linux
+  ```
+
+- **En macOS:**
+  ```bash
+  flutter run -d macos
+  ```
+
+- **En Navegador Web (Chrome / Edge):**
+  ```bash
+  flutter run -d chrome
+  ```
+
+- **En Emulador Android / Dispositivo Físico:**
+  ```bash
+  flutter run
+  ```
