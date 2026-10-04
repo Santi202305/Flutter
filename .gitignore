@@ -1,3 +1,5 @@
 # Ignore report files so they remain on local PC only
 *INFORME*
 INFORME_ENTREGA*
+build_pdf.py
+*.py
