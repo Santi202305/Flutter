@@ -68,29 +68,29 @@ Desarrollo de una aplicación Flutter demostrativa para el manejo de tareas así
 
 ---
 
-### 📸 Evidencias del Taller 2
+### 📸 Evidencias del Taller 2 (HD Nativas)
 
 #### 1. Future & async/await (Estados: Cargando / Éxito / Error)
-Demonstración del servicio simulado y estados de interfaz de usuario.
-<img src="docs/screenshots/taller2/02_future_cargando.png" alt="Future Cargando" width="100%" />
-<img src="docs/screenshots/taller2/03_future_exito.png" alt="Future Éxito" width="100%" />
-<img src="docs/screenshots/taller2/04_future_error.png" alt="Future Error" width="100%" />
+Demostración del servicio simulado y estados de interfaz de usuario.
+<img src="docs/screenshots/taller2/hd_02_future_cargando.png" alt="Future Cargando" width="100%" />
+<img src="docs/screenshots/taller2/hd_03_future_exito.png" alt="Future Éxito" width="100%" />
+<img src="docs/screenshots/taller2/hd_04_future_error.png" alt="Future Error" width="100%" />
 
 ---
 
 #### 2. Timer (Cronómetro con Iniciar, Pausar, Reanudar, Reiniciar)
 Marcador digital dinámico y gestión segura de memoria.
-<img src="docs/screenshots/taller2/05_timer_reiniciado.png" alt="Timer Reiniciado" width="100%" />
-<img src="docs/screenshots/taller2/06_timer_corriendo.png" alt="Timer Corriendo" width="100%" />
-<img src="docs/screenshots/taller2/07_timer_pausado.png" alt="Timer Pausado" width="100%" />
+<img src="docs/screenshots/taller2/hd_05_timer_reiniciado.png" alt="Timer Reiniciado" width="100%" />
+<img src="docs/screenshots/taller2/hd_06_timer_corriendo.png" alt="Timer Corriendo" width="100%" />
+<img src="docs/screenshots/taller2/hd_07_timer_pausado.png" alt="Timer Pausado" width="100%" />
 
 ---
 
 #### 3. Isolate (Procesamiento Pesado en Segundo Plano)
 Cómputo en hilo nativo de CPU manteniendo animación a 60 FPS sin congelar la UI.
-<img src="docs/screenshots/taller2/08_isolate_estado_inicial.png" alt="Isolate Inicial" width="100%" />
-<img src="docs/screenshots/taller2/09_isolate_procesando.png" alt="Isolate Procesando" width="100%" />
-<img src="docs/screenshots/taller2/10_isolate_resultado.png" alt="Isolate Resultado" width="100%" />
+<img src="docs/screenshots/taller2/hd_08_isolate_estado_inicial.png" alt="Isolate Inicial" width="100%" />
+<img src="docs/screenshots/taller2/hd_09_isolate_procesando.png" alt="Isolate Procesando" width="100%" />
+<img src="docs/screenshots/taller2/hd_10_isolate_resultado.png" alt="Isolate Resultado" width="100%" />
 
 ---
 
