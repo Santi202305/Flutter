@@ -1,0 +1,64 @@
+name: Build Flutter Android APKs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+      - feature/app_distribution
+
+jobs:
+  build:
+    name: Build Release APKs (v1.0.0 and v1.0.1)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Dependencies
+        run: |
+          cd taller2
+          flutter pub get
+
+      # -------------------------------------------------------------
+      # 1. Compilar APK Versión 1.0.0 (Build 1)
+      # -------------------------------------------------------------
+      - name: Build APK v1.0.0
+        run: |
+          cd taller2
+          flutter build apk --release --build-name=1.0.0 --build-number=1
+          mkdir -p ../dist
+          cp build/app/outputs/flutter-apk/app-release.apk ../dist/taller2-v1.0.0-release.apk
+
+      # -------------------------------------------------------------
+      # 2. Compilar APK Versión 1.0.1 (Build 2 - Actualización Incremental)
+      # -------------------------------------------------------------
+      - name: Build APK v1.0.1
+        run: |
+          cd taller2
+          flutter build apk --release --build-name=1.0.1 --build-number=2
+          cp build/app/outputs/flutter-apk/app-release.apk ../dist/taller2-v1.0.1-release.apk
+
+      # -------------------------------------------------------------
+      # 3. Subir ambos APKs como artefactos descargables
+      # -------------------------------------------------------------
+      - name: Upload APKs Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase-release-apks
+          path: dist/*.apk
+          retention-days: 14
