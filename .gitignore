@@ -1,5 +1,7 @@
 # Ignore report files so they remain on local PC only
 *INFORME*
 INFORME_ENTREGA*
+ENTREGA_APP_DISTRIBUTION.txt
 build_pdf.py
+generate_distribution_pdf.py
 *.py
