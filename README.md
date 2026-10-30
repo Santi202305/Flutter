@@ -17,9 +17,10 @@ Bienvenido al repositorio oficial del curso de **Desarrollo de Aplicaciones Móv
 - **`dev`**: Rama principal de desarrollo e integración continua.
 - **`feature/taller1`**: Rama del Taller 1 (integrada a `dev` y `main`).
 - **`feature/taller_segundo_plano`**: Rama del Taller 2 (Asincronía, Timers e Isolates).
+- **`feature/app_distribution`**: Rama del Taller de Distribución de Apps con Firebase App Distribution.
 
 ```text
-  main (producción) ◄── PR #2 ── dev (desarrollo) ◄── PR #1 ── feature/taller_segundo_plano
+  main (producción) ◄── PR #2 ── dev (desarrollo) ◄── PR #1 ── feature/app_distribution
 ```
 
 ---
@@ -112,6 +113,60 @@ Construcción de una interfaz moderna y reactiva en Flutter para demostrar el ma
 
 #### 4. Pull Request #2: `dev` ➔ `main` (Merged)
 <img src="docs/screenshots/04_pr_dev_a_main.png" alt="PR dev a main" width="100%" />
+
+---
+
+## 📦 Taller: Distribución de Aplicaciones con Firebase App Distribution
+
+### 📌 Flujo de Distribución
+```text
+  ┌─────────────────┐      ┌───────────────────────────┐      ┌───────────────┐      ┌─────────────────┐      ┌─────────────────┐
+  │  Compilar APK   │ ───► │ Subir a Firebase Console  │ ───► │ Asignar Grupo │ ───► │  Notificación   │ ───► │  Instalación &   │
+  │ (flutter build) │      │   (App Distribution)      │      │  (QA_Clase)   │      │ (Invitación)    │      │  Actualización  │
+  └─────────────────┘      └───────────────────────────┘      └───────────────┘      └─────────────────┘      └─────────────────┘
+```
+
+1. **Generación del APK:** Compilación en modo release validando el `applicationId` y permisos mínimos como `INTERNET`.
+2. **Registro y Carga en Firebase Console:** Creación del aplicativo Android en Firebase Console asociando el `applicationId` (`com.santi.taller2.taller2`).
+3. **Gestión de Testers y Grupos:** Creación del grupo `QA_Clase` e inclusión del tester oficial (`dduran@uceva.edu.co`).
+4. **Publicación y Release Notes:** Publicación del release adjuntando notas de versión detalladas y enlace de descarga.
+5. **Actualización Incremental:** Despliegue de actualización pasando de versión (ej.: `1.0.0+1` a `1.0.1+2`), permitiendo a los testers recibir e instalar la nueva versión sin perder datos.
+
+### 🏷️ Versionado y Release Notes
+
+- **Formato de Versionado:** En `pubspec.yaml`, la propiedad `version: X.Y.Z+N` controla:
+  - `versionName` (`X.Y.Z`): Nombre semántico visible para el usuario y tester (ej.: `1.0.0` y `1.0.1`).
+  - `versionCode` (`N`): Entero incremental requerido por Android para validar actualizaciones de instalación (`+1`, `+2`).
+
+- **Estructura recomendada de Release Notes:**
+  ```text
+  Versión: 1.0.0 (Build 1)
+  Fecha: 29/10/2026
+  Responsable: Santiago Morales
+  Cambios incluidos:
+  - Implementación inicial de la app con gestión de tareas asíncronas y segundo plano.
+  - Módulos de Future, Timer e Isolate operativos.
+  - Permiso de INTERNET configurado en AndroidManifest.xml.
+  ```
+
+### 🚀 Publicación y Replicación en Equipo
+Para replicar el proceso de publicación:
+```bash
+# 1. Asegurar la versión en pubspec.yaml
+# version: 1.0.0+1
+
+# 2. Compilar APK release
+cd taller2
+flutter build apk --release
+
+# 3. Ubicación del binario generado:
+# taller2/build/app/outputs/flutter-apk/app-release.apk
+
+# 4. En Firebase Console -> App Distribution:
+# - Arrastrar app-release.apk
+# - Seleccionar grupo QA_Clase (tester: dduran@uceva.edu.co)
+# - Pegar Release Notes y presionar 'Distribuir'
+```
 
 ---
 
